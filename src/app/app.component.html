@@ -3,7 +3,7 @@
 <div>comparisonWorksInTemplate: {{ OrderByMode[enumKeys[0]] === OrderByMode.Price }}</div>
 
 <select>
-  <option *ngFor="let enumKey of enumKeys" [selected]="OrderByMode[enumKey] === OrderByMode.Price">
+  <option *ngFor="let enumKey of enumKeys" [selected]="OrderByMode[enumKey] === OrderByMode.Distance">
     {{ enumKey }}
   </option>
 </select>
