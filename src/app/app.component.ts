@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ng-enum';
+  public OrderByMode = OrderByMode;
+
+  public enumKeys: (keyof typeof OrderByMode)[] = ['Price', 'Distance'];
+
+  public comparisonWorksInCode =
+    OrderByMode[this.enumKeys[0]] === OrderByMode.Price;
+}
+
+export enum OrderByMode {
+  Price,
+  Distance
 }

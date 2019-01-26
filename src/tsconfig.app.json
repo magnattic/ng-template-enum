@@ -1,5 +1,8 @@
 {
   "extends": "../tsconfig.json",
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true
+  },
   "compilerOptions": {
     "outDir": "../out-tsc/app",
     "types": []
