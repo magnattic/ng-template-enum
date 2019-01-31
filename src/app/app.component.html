@@ -1,9 +1,16 @@
 <div>comparisonWorksInCode: {{ comparisonWorksInCode }}</div>
 
-<div>comparisonWorksInTemplate: {{ OrderByMode[enumKeys[0]] === OrderByMode.Price }}</div>
+<div>
+  comparisonWorksInTemplate:
+  {{ OrderByMode[enumKeys[0]] === OrderByMode.Price }}
+</div>
 
-<select>
-  <option *ngFor="let enumKey of enumKeys" [selected]="OrderByMode[enumKey] === OrderByMode.Distance">
-    {{ enumKey }}
-  </option>
-</select>
+<div *ngFor="let enumKey of enumKeys; let index = index">
+  Index works in ngFor:
+  {{ OrderByMode[enumKey[index]] == OrderByMode.Distance }}
+</div>
+
+<div *ngFor="let enumKey of enumKeys">
+  Loop variable fails in ngFor:
+  {{ OrderByMode[enumKey] == OrderByMode.Distance }}
+</div>
